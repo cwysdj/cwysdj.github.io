@@ -21,18 +21,17 @@
    
 </head>
 <body>
-<audio autoplay="autoplay" height="100" width="100">
+<audio autoplay="autopaly" loop="loop" id="audios">
+        <source src="yujian.mp3" type="audio/mp3" />
+    </audio>
 
-  <source src="yujian.mp3" type="audio/mp3" />
-function audioAutoPlay(id){
-    var audio = document.getElementById(id);
-    audio.play();
-    document.addEventListener("WeixinJSBridgeReady", function () {
-            audio.play();
-    }, false);
-}
-audioAutoPlay('yujian.mp3');  
-</audio> 
+    <script>
+    // 这里使用了微信自带的WeixinJSBridgeReady事件
+    document.addEventListener('WeixinJSBridgeReady', function() {
+        document.getElementById('audios').play()
+    })
+
+    </script>
 
 <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
 
